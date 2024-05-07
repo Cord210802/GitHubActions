@@ -1,36 +1,38 @@
-# GitAct
-Tarea: Automatización de pruebas con GitHub Actions
+# Automatización de Pruebas con GitHub Actions
 
-Objetivo: Configurar y utilizar GitHub Actions para automatizar pruebas de scripts en Python, partiendo de un repositorio base proporcionado.
+## Objetivo
+Configurar y utilizar GitHub Actions para automatizar pruebas de scripts en Python, utilizando un repositorio base proporcionado.
 
-Pasos a seguir:
+## Pasos a Seguir
 
-    1. Crear tu carpeta para la entrega:
-        • Hacer Fork al repositorio de la clase en GitHub
-        • Clonar el repositorio
-        • Crea una branch para trabajar
-        • Crear una carpeta con tu nombre y primer apellido dentro de la carpeta ‘tareas’
+### 1. Preparación del Entorno de Trabajo
+- **Fork del Repositorio**: Realiza un fork del repositorio de la clase en GitHub.
+- **Clonar el Repositorio**: Clona el repositorio forked a tu máquina local.
+- **Crear Branch**: Crea una nueva branch para trabajar en tus tareas.
+- **Crear Carpeta**: Dentro de la carpeta `tareas`, crea una subcarpeta con tu nombre y primer apellido.
 
-    2. Copiar el código de Python:
-        • Copia a tu carpeta el archivo de la carpeta ‘códigos’ 
+### 2. Configuración del Código
+- **Copiar Código**: Copia el archivo de Python de la carpeta `códigos` a tu propia subcarpeta en `tareas`.
 
-    3. Configurar GitHub Actions Workflow:
-        • Crear un archivo YML con tu nombre y apellido en la carpeta .github/workflows: Este archivo configurará el workflow que se ejecutará automáticamente cada vez que hagas un push. Tienes que especificar que solo quieres que se haga el action cuando se cambian cosas en tu carpeta de tareas (triger). 
+### 3. Configuración de GitHub Actions
+- **Archivo YML**: En la carpeta `.github/workflows`, crea un archivo YML con tu nombre y apellido. Este archivo configurará el workflow que se ejecutará automáticamente cada vez que detecte que hiciste un cambio en tu carpeta al hacer un push (triger).
+  - **Trigger**: Configura el archivo YML para que solo ejecute el action cuando se detecten cambios en tu carpeta de tareas.
+- **Docker File**: Dentro de tu carpeta, crea un Dockerfile que configure el entorno necesario para ejecutar el archivo `.py`.
 
-        • Dentro de tu carpeta crea un docker file que asegure que se podrá correr el archivo .py. Recuerda como se tiene que hacer un docker file con envs. 
+### 4. Ejecución de Pruebas Locales
+- **Pruebas Locales**: Verifica que las pruebas se ejecutan correctamente en tu entorno local antes de hacer push al repositorio remoto.
 
-        • Buscar la manera de probar el código usando GitHub Actions: Configura el workflow para que ejecute automáticamente las pruebas cada vez que se actualice tu carpeta.
+### 5. Documentación
+- **Archivo de Documentación**: Redacta un archivo `.txt` en tu carpeta. Este archivo debe explicar:
+  - El propósito del proyecto.
+  - Cómo se ejecutan las pruebas localmente.
+  - La configuración del workflow de GitHub Actions.
+  - Incluye cualquier información adicional que pueda ser útil para entender y ejecutar correctamente el proyecto.
 
-    4. Ejecutar Pruebas Locales:
-        • Verificar que las pruebas se ejecutan correctamente en tu repositorio personal antes de hacer push: Asegúrate de que todo funciona como se espera para evitar fallos en el proceso de CI/CD.
+## Criterios de Evaluación
+- Correcta configuración y funcionalidad del workflow en GitHub Actions.
+- Eficiencia de las pruebas unitarias implementadas.
+- Claridad y completitud de la documentación proporcionada.
 
-    5. Documentación:
-        • Redactar un archivo .txt en tu carpeta: Debe explicar el propósito del proyecto, cómo se ejecutan las pruebas localmente, y cómo está configurado el workflow de GitHub Actions. Asegúrate de incluir cualquier información que pueda ser útil para entender y ejecutar correctamente el proyecto.
-
-Criterios de Evaluación:
-    • Correcta configuración y funcionalidad del workflow en GitHub Actions.
-    • Eficiencia de las pruebas unitarias implementadas.
-    • Claridad y completitud de la documentación proporcionada.
- 
-Entregable:
-    • Hacer pull request de tu carpeta y el archivo evn.yml
+## Entregable
+- Realiza un pull request de tu carpeta al repositorio original una vez completados todos los pasos.
