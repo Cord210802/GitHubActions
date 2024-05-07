@@ -4,6 +4,7 @@ Tarea: Automatización de pruebas con GitHub Actions
 Objetivo: Configurar y utilizar GitHub Actions para automatizar pruebas de scripts en Python, partiendo de un repositorio base proporcionado.
 
 Pasos a seguir:
+
     1. Crear tu carpeta para la entrega:
         • Hacer Fork al repositorio de la clase en GitHub
         • Clonar el repositorio
