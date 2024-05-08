@@ -18,6 +18,7 @@ Configurar y utilizar GitHub Actions para automatizar pruebas de scripts en Pyth
 - **Archivo YML**: En la carpeta `.github/workflows`, crea un archivo YML con tu nombre y apellido. Este archivo configurará el workflow que se ejecutará automáticamente cada vez que detecte que hiciste un cambio en tu carpeta al hacer un push (triger).
   - **Trigger**: Configura el archivo YML para que solo ejecute el action cuando se detecten cambios en tu carpeta de tareas.
 - **Docker File**: Dentro de tu carpeta, crea un Dockerfile que configure el entorno necesario para ejecutar el archivo `.py`.
+- **Secrets**: Crea tus variables de acceso en el repo para poder subir tu imagen a docker hub.
 
 ### 4. Ejecución de Pruebas Locales
 - **Pruebas Locales**: Verifica que las pruebas se ejecutan correctamente en tu entorno local antes de hacer push al repositorio remoto.
@@ -27,6 +28,7 @@ Configurar y utilizar GitHub Actions para automatizar pruebas de scripts en Pyth
   - El propósito del proyecto.
   - Cómo se ejecutan las pruebas localmente.
   - La configuración del workflow de GitHub Actions.
+  - El link de tu docker hub con tu imagen
   - Incluye cualquier información adicional que pueda ser útil para entender y ejecutar correctamente el proyecto.
 
 ## Criterios de Evaluación
