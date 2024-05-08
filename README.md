@@ -28,7 +28,7 @@ Configurar y utilizar GitHub Actions para automatizar pruebas de scripts en Pyth
   - El propósito del proyecto.
   - Cómo se ejecutan las pruebas localmente.
   - La configuración del workflow de GitHub Actions.
-  - El link de tu docker hub con tu imagen
+  - El link de tu docker hub con tu imagen creada con secrets
   - Incluye cualquier información adicional que pueda ser útil para entender y ejecutar correctamente el proyecto.
 
 ## Criterios de Evaluación
