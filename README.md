@@ -31,6 +31,9 @@ Configurar y utilizar GitHub Actions para automatizar pruebas de scripts en Pyth
   - El link de tu docker hub con tu imagen creada con secrets
   - Incluye cualquier información adicional que pueda ser útil para entender y ejecutar correctamente el proyecto.
 
+### 6. Puntos extra
+-Hacer un .yml dentro de workflows para que a las 17:25 tiempo de México todos los lunes y miercoles imprima el git log del repo
+
 ## Criterios de Evaluación
 - Correcta configuración y funcionalidad del workflow en GitHub Actions.
 - Eficiencia de las pruebas unitarias implementadas.
