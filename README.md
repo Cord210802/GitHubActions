@@ -41,3 +41,6 @@ Configurar y utilizar GitHub Actions para automatizar pruebas de scripts en Pyth
 
 ## Entregable
 - Realiza un pull request de tu carpeta al repositorio original una vez completados todos los pasos.
+
+## Presentacion
+- https://www.canva.com/design/DAGESLCIB3M/-pjsKrjip7s6K1v2Dhp7aQ/edit?utm_content=DAGESLCIB3M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
