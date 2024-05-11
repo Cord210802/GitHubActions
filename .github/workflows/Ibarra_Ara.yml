@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '/home/aranzaibarra/GitHubActions/tareas/Ibarra_Ara'
+      - '/home/aranzaibarra/GitHubActions/tareas/Ibarra_Ara/prueba.py'
 
 jobs:
   build:
@@ -10,4 +11,13 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v2
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Build Docker Image
+      run: |
+        docker build -t gitact_hw .
+    - name: Run Docker Container
+      run: |
+        docker run gitact_hw
 
