@@ -2,9 +2,9 @@ name: Prueba_GHA
 
 on:
   pull_request:
+  push:
     paths:
       - 'GitHubActions/tareas/Ibarra_Ara'
-      - 'GitHubActions/tareas/Ibarra_Ara/prueba.py'
 
 jobs:
   build:
