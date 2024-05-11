@@ -2,8 +2,8 @@ name: Prueba_GHA
 on:
   push:
     paths:
-      - '/home/aranzaibarra/GitHubActions/tareas/Ibarra_Ara'
-      - '/home/aranzaibarra/GitHubActions/tareas/Ibarra_Ara/prueba.py'
+      - 'GitHubActions/tareas/Ibarra_Ara'
+      - 'GitHubActions/tareas/Ibarra_Ara/prueba.py'
 
 jobs:
   build:
