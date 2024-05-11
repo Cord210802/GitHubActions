@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - '/home/aranzaibarra/GitHubActions/tareas/Ibarra_Ara'
+      - '/home/aranzaibarra/GitHubActions/tareas/Ibarra_Ara/prueba.py'
 
 jobs:
   build:
@@ -15,9 +16,8 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t nombre_imagen .
-    
+        docker build -t gitact_hw .
     - name: Run Docker Container
       run: |
-        docker run nombre_imagen
+        docker run gitact_hw
 
