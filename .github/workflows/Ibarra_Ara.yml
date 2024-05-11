@@ -1,0 +1,13 @@
+name: Prueba_GHA
+on:
+  push:
+    paths:
+      - '/home/aranzaibarra/GitHubActions/tareas/Ibarra_Ara'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
