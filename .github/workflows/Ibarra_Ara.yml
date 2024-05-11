@@ -1,6 +1,7 @@
 name: Prueba_GHA
+
 on:
-  push:
+  pull_request:
     paths:
       - 'GitHubActions/tareas/Ibarra_Ara'
       - 'GitHubActions/tareas/Ibarra_Ara/prueba.py'
