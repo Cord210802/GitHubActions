@@ -5,10 +5,11 @@ FROM python:3.9
 WORKDIR /app
 
 # Copia el archivo .py actual al directorio de trabajo en la imagen
-COPY GitHubActions/tareas/Ibarra_Ara/prueba.py /app
+COPY prueba.py /app
 
 # Instala las dependencias necesarias
 RUN pip install polars pandas
 
 # Ejecuta el archivo .py cuando se inicie el contenedor
 CMD ["python", "prueba.py"]
+
