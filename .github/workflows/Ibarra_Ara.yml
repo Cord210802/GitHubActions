@@ -19,5 +19,7 @@ jobs:
         docker build -t gitact_hw tareas/Ibarra_Ara
     - name: Run Docker Container
       run: |
-        docker run -it gitact_hw
-
+        docker run gitact_hw > output.log
+    - name: Print Docker Output
+      run: |
+        cat output.log
