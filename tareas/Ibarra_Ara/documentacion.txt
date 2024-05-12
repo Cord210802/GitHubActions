@@ -1,9 +1,11 @@
-#Documentación
-
+#Documentacion
+(Nota:No tengo mucha idea de que debo de poner aqui)
 
 Propósito del proyecto 
 
 Comprender de una mejor manera el uso de GitActions invitandonos a buscar en el internet cómo funcionan y qué se puede hacer. 
+También hacer que busquemos como arreglar o cómo hacer ciertas cosas.
+Entrar a la documentación y ver qué es lo que podríamos hacer. 
 
 La configuración del workflow de GitHub Actions
 
@@ -43,6 +45,7 @@ https://hub.docker.com/repository/docker/aranzaibarra/gitact_hw/general
 Incluye cualquier información adicional que pueda ser útil para entender y ejecutar correctamente el proyecto. 
 Para poder ver el dataframe impreso cuando pasa la accion es:
 ir al build y picarle en el 
-irse al apartado de "print docker output"
+Irse al apartado de "print docker output"
 Ahi ya te debería de mostrar el docker 
+
 
