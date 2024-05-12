@@ -19,5 +19,5 @@ jobs:
         docker build -t gitact_hw tareas/Ibarra_Ara
     - name: Run Docker Container
       run: |
-        docker run gitact_hw
+        docker run -it gitact_hw
 
