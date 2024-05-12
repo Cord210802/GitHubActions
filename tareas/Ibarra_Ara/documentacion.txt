@@ -1,0 +1,51 @@
+#Documentacion
+(Nota:No tengo mucha idea de que debo de poner aqui)
+
+Propósito del proyecto 
+
+Comprender de una mejor manera el uso de GitActions invitandonos a buscar en el internet cómo funcionan y qué se puede hacer. 
+También hacer que busquemos como arreglar o cómo hacer ciertas cosas.
+Entrar a la documentación y ver qué es lo que podríamos hacer. 
+
+La configuración del workflow de GitHub Actions
+
+el .yml en wl workflows con el que corrió mi git action (y que si se mostró el dataframe como debería) es:
+#name: Prueba_GHA
+
+#on:
+#  pull_request:
+#  push:
+#    paths:
+#      - 'tareas/Ibarra_Ara/**'
+
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: Check out repository
+#      uses: actions/checkout@v3
+#    - name: Set up Docker Buildx
+#      uses: docker/setup-buildx-action@v1
+#    - name: Build Docker Image
+#      run: |
+#        docker build -t gitact_hw tareas/Ibarra_Ara
+#   - name: Run Docker Container
+#      run: |
+#        docker run gitact_hw > output.log
+#    - name: Print Docker Output
+#      run: |
+#        cat output.log
+
+
+
+El link de tu docker hub con tu imagen creada con secrets
+
+https://hub.docker.com/repository/docker/aranzaibarra/gitact_hw/general
+
+Incluye cualquier información adicional que pueda ser útil para entender y ejecutar correctamente el proyecto. 
+Para poder ver el dataframe impreso cuando pasa la accion es:
+ir al build y picarle en el 
+Irse al apartado de "print docker output"
+Ahi ya te debería de mostrar el docker 
+
+
