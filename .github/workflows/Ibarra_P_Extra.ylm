@@ -1,0 +1,22 @@
+name: Git Log y Pull Request
+
+on:
+  schedule:
+    - cron: '25 22 * * 1,3'  # Ejecutar a las 17:25 hora de México (22:25 UTC) todos los lunes y miércoles
+  pull_request:
+    types: [opened, reopened]  # Ejecutar cuando se abra o reabra un pull request
+
+jobs:
+  git_log:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+    - name: Show Git Log
+      run: git log
+
+  pull_request:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
