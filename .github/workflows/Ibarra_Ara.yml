@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     paths:
-      - 'GitHubActions/tareas/Ibarra_Ara/**'
+      - 'tareas/Ibarra_Ara/**'
 
 jobs:
   build:
