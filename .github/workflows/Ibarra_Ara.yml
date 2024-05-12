@@ -3,8 +3,6 @@ name: Prueba_GHA
 on:
   pull_request:
   push:
-    paths:
-      - 'tareas/Ibarra_Ara/**'
     branches:
       - main
   workflow_dispatch:
