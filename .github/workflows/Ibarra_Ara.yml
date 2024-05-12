@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'tareas/Ibarra_Ara/**'
+  workflow_dispatch:
 
 jobs:
   build:
