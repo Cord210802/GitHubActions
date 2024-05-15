@@ -1,32 +1,28 @@
-name: actions
+name: Action_dockerhub
 
 on:
+  pull_request:
   push:
-    branches:
-      - main
     paths:
       - 'tareas/Uria_Jaime/**'
+  workflow_dispatch:
 
 jobs:
-  build-and-push:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.8'
-
-      - name: Build Docker image
-        run: |
-          docker build -t DOCKER_USERNAME/${{ github.repository }}:${{ github.sha }} .
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker push DOCKER_USERNAME/${{ github.repository }}:${{ github.sha }}
-          continue-on-error: true
-
-      - name: Print Docker Output
-        run: |
-          cat output.log
-          continue-on-error: true
+    - name: Check out repository
+      uses: actions/checkout@v3
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+    - name: Build docker image
+      run: docker build -t gitact_hw tareas/Ibarra_Ara
+    - name: Dockerhub
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
+    - name: Push Docker Image to Docker Hub
+      run: |
+        docker tag gitact_hw ${{ secrets.DOCKERHUB_USERNAME }}/gitact_hw:latest
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/gitact_hw:latest
+    - name: Run Docker Container
+      run: |
+        docker run ${{ secrets.DOCKERHUB_USERNAME }}/gitact_hw > output.log
