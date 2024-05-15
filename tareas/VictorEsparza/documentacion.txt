@@ -1,0 +1,53 @@
+Link del dockerhub con imagen creada:
+https://hub.docker.com/repository/docker/victorh22/tareaghactions/general
+
+El propósito de este proyecto fue el aprendizaje del funcionamiento, uso y aprovechamiento de GitHubActions.
+Gracias a los ejercicios que los excelentes profesores nos dejaron de tarea, pudimos no solo poner en práctica lo que 
+su perfecta exposición nos enseñó, sino que pudimso aplicarlo junto a otros conceptos vistos en clase, tales como montar
+una imagen de Docker y subirla a nuestro DockerHub. De esta manera, aprendimos más utilidades y aplicaciones del tema,
+los cualds nos podrán servir en un futuro bajo un cotexto académico o profesional. 
+
+Las pruebas locales se ejecutan en una computadora remota, que pertenece a GitHub. En ella, se realizan las acciones 
+que hayamos establecido en nuestro archivo .yml. GitHub nos permite ver paso por paso lo que va sucediendo en cada línea,
+y gracias a esta función podemos ver si nuestro código tiene algún tipo de fallo.
+
+La configuración del workflow de GitHub Actions:
+name: TareaGitHubActions
+
+on:
+  push:
+    paths:
+      - 'tareas/VictorEsparza/*'
+      #esto nos dice que las acciones se realizarán al momento de modificar algo en mi carpeta de tareas
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      #nos ayuda a copiar el repositorio en la computadora remota de gtihub
+      
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+      #acción que nos ayuda a construir un docker 
+
+    - name: Build Docker image
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/tareaghactions:latest tareas/VictorEsparza
+      #acción que construye nuestra imagen, dándole un nombre, y estableciendo a partir de cual carpeta se constuye 
+      
+    - name: Log into Docker Hub
+      run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      #acción que nos logea a dockerhub, por medio de nuestros Secrets previamente establecidos
+      
+    - name: Push Docker image to Docker Hub
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/tareaghactions:latest
+      #acción que sube la imagen a dockerhub
+      
+    - name: Run tests
+      run: docker run ${{ secrets.DOCKER_USERNAME }}/tareaghactions:latest
+      #acción que corre el docker, y en el docker se descargan los paquetes y se corre el "prueba.py"
+
+Info adicional:
+No requerida
