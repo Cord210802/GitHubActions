@@ -12,3 +12,4 @@ df = pl.DataFrame(data)
 
 # Mostrar las primeras filas del DataFrame
 print(df.head())
+#H
