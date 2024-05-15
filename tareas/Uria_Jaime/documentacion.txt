@@ -1,0 +1,31 @@
+Documentación del Proyecto
+
+Propósito del Proyecto:
+
+Este proyecto se centra en el aprendizaje y manejo avanzado de GitHub Actions en combinación con Docker y Docker Hub. A través de las tareas propuestas, aplicamos 
+teoría y práctica para profundizar en cómo estas herramientas pueden automatizar pruebas y facilitar despliegues eficientes. El proyecto no solo refuerza el aprendizaje 
+adquirido en clases, sino que también explora nuevas aplicaciones prácticas relevantes tanto en ambientes académicos como profesionales.
+
+Ejecución y Verificación de Pruebas:
+
+Las pruebas se ejecutan automáticamente en una infraestructura remota proporcionada por GitHub cada vez que se realiza un 'push' a los archivos relevantes en el 
+repositorio. Este enfoque permite que cada cambio sea verificado de manera continua, asegurando que todas las funciones del proyecto se mantengan operativas tras nuevas 
+modificaciones.
+
+Para verificar la salida de las pruebas:
+- Navega al apartado "Actions" de GitHub.
+- Selecciona el workflow correspondiente a la última modificación.
+- Busca el job específico que ejecuta los tests y expande los detalles para ver los resultados
+
+Link del Docker Hub
+
+La imagen de Docker creada y configurada a través de GitHub Secrets está disponible en el siguiente enlace:
+[Perfil Docker Hub de Victor Esparza](https://hub.docker.com/repository/docker/victorh22/tareaghactions/general)
+
+Información Adicional:
+
+Este documento sirve como una guía para entender los objetivos y procesos establecidos en el proyecto. Se recomienda tener conocimientos previos en YAML, manejo de 
+Docker, y GitHub Actions para una ejecución y comprensión óptimas del proyecto. Cualquier problema o error durante la ejecución puede ser diagnosticado revisando los 
+logs de cada paso en el workflow proporcionado por GitHub.
+
+La verdad esto lo hizo chatgpt
