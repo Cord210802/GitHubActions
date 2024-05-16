@@ -1,0 +1,41 @@
+#Nombre de nuestro workflow: Prueba 1
+name: Prueba 1
+#Esto quiere decir:
+#En la rama main, cuando se haga un push, se ejecutará el job que se defina en este archivo.
+on:
+    push:
+      paths:
+        - 'tareas/Reyes_Carla/**'
+#Definimos los trabajos que se ejecutarán en este workflow.
+jobs:
+    build:
+        #Se ejecutará en un ambiente de ubuntu.
+        runs-on: ubuntu-latest
+        #Pasos que se ejecutarán en este trabajo.
+        steps:
+        #Paso 1: Checar el repositorio.
+        - name: Check out repository
+        uses: actions/checkout@v3
+        #Paso 2: Construir la imagen de Docker.
+        - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        - name: Build Docker Image
+        run: |
+            docker build -t gitact_hw tareas/Reyes_Carla
+        #Paso 3: Iniciar sesión en Docker Hub.
+        - name: Log in to Docker Hub
+        run: docker login -u ${{ secrets.GITACT_HW_USER }} -p ${{ secrets.GITACT_HW_KEY }}
+        #Paso 4: Etiquetar la imagen de Docker.
+        - name: Tag Docker Image
+        run: docker tag gitact_hw ${{ secrets.GITACT_HW_USER }}/gitact_hw:latest
+        #Paso 5: Subir la imagen de Docker a Docker Hub.
+        - name: Push Docker Image to Docker Hub
+        run: docker push ${{ secrets.GITACT_HW_USER }}/gitact_hw:latest
+        #Paso 6: Correr el contenedor de Docker.
+        - name: Run Docker Container
+        run: |
+            docker run ${{ secrets.GITACT_HW_USER }}/gitact_hw > output.log
+        #Paso 7: Imprimir la salida del contenedor de Docker.
+        - name: Print Docker Output
+        run: |
+            cat output.log
