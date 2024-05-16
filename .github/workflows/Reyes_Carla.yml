@@ -1,36 +1,34 @@
-name: Prueba 1
+name: Prueba1
 
 on:
+  pull_request:
   push:
     paths:
       - 'tareas/Reyes_Carla/**'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Check out repository
       uses: actions/checkout@v3
-
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
-
     - name: Build Docker Image
       run: |
-        docker build -t githubactions tareas/Reyes_Carla
-
+        docker build -t gitact_hw tareas/Ibarra_Ara
     - name: Log in to Docker Hub
-      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Tag Docker Image
-      run: docker tag githubactions ${{ secrets.DOCKERHUB_USERNAME }}/githubactions:latest
-
+      run: docker tag gitact_hw ${{ secrets.DOCKERHUB_USERNAME }}/gitact_hw:latest
     - name: Push Docker Image to Docker Hub
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/githubactions:latest
-
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/gitact_hw:latest
     - name: Run Docker Container
-      run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/githubactions > output.log
-
+      run: |
+        docker run ${{ secrets.DOCKERHUB_USERNAME }}/gitact_hw > output.log
     - name: Print Docker Output
-      run: cat output.log
+      run: |
+        cat output.log
+
+
