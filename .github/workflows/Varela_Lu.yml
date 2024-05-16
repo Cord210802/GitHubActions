@@ -26,16 +26,15 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
-        run: |
-          echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+        run: echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
 
       - name: Tag Docker Image
-        run: docker tag tarea ${{ secrets.DOCKERHUB_USERNAME }}/tarea:latest
+        run: docker tag tarea "${DOCKER_USERNAME}/tarea:latest"
 
       - name: Push Docker Image to Docker Hub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/tarea:latest
+        run: docker push "${DOCKER_USERNAME}/tarea:latest"
 
       - name: Run Docker Container and print output
         run: |
-          docker run ${{ secrets.DOCKERHUB_USERNAME }}/tarea > output.log
+          docker run "${DOCKER_USERNAME}/tarea:latest" > output.log
           cat output.log
