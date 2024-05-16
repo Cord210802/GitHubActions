@@ -1,0 +1,25 @@
+name: Subir imagen Docker a Docker Hub y ejecutar contenedor
+
+on:
+  push:
+    paths:
+      - 'tareas/Garcia_Diego/**'
+
+jobs:
+  docker_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v2
+      
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/myapp ./tareas/Garcia_Diego
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/myapp
+
+      - name: Run Docker container
+        run: |
+          docker run ${{ secrets.DOCKERHUB_USERNAME }}/myapp
+          CONTAINER_ID=$(docker ps -lq)
+          docker logs $CONTAINER_ID
