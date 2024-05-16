@@ -13,4 +13,4 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Print Git Log
-       run: git log --pretty=format:"%h - %an, %ar : %s"
+      run: git log --pretty=format:"%h - %an, %ar : %s"
