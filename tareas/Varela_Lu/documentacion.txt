@@ -1,0 +1,17 @@
+Propósito del Proyecto
+El propósito de este proyecto es aprender a utilizar GitHub Actions para automatizar tareas en nuestro flujo de trabajo. 
+Con GitHub Actions, se pueden configurar flujos de trabajo automatizados que se activan cuando pasa algo especifico en nuestro repositorio.
+
+Ejecución de Pruebas Localmente
+Para ejecutar las pruebas localmente, sigue estos pasos:
+1. Clona este repositorio en tu máquina local.
+2. Cambias a la carpeta que quieres usar 
+3. Instala las dependencias del proyecto
+4. Creas un .yml
+5. Configuración del Workflow de GitHub Actions
+
+Link del docker hub 
+https://hub.docker.com/repository/docker/lvarega/tarea/general
+
+Informacion adicional 
+No se necesita
