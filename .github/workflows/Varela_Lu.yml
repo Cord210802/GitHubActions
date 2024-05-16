@@ -1,10 +1,10 @@
-ame: GitActions
+name: GitActions
 
 on:
   pull_request:
   push:
     paths:
-      - 'tareas/LuciaVarela/**'
+      - 'tareas/Varela_Lu/**'
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t tarea tareas/LuciaVarela
+          docker build -t tarea tareas/Varela_Lu
 
       - name: Log in to Docker Hub
         env:
