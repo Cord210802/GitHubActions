@@ -10,5 +10,8 @@ Para ejecutar las pruebas localmente, sigue estos pasos:
 4. Creas un .yml
 5. Configuración del Workflow de GitHub Actions
 
+Link del docker hub 
+https://hub.docker.com/repository/docker/lvarega/tarea/general
+
 Informacion adicional 
 No se necesita
