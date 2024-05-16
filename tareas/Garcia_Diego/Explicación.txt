@@ -1,0 +1,18 @@
+El propósito de este proyecto fue configurar de manera adecuada un archivo yml para que a través de 
+GitHub Actions se automatizara la creación de un entorno de trabajo en Docker,
+y lo que es más, que la imagen de este se subiera a nuestra cuenta de Docker Hub.
+
+Para lograr esto utilizamos como trigger cualquier push en nuestra propia carpeta. Es decir, si alguno de los
+cambios rastreados por GitHub tomaba lugar en nuestra carpeta, GitHub Actions se encargaría de montar
+el docker automáticamente y de subir su imagen. El docker, a su vez, ejecutaría el archivo de Python que
+copiamos a nuestra carpeta. 
+
+Cabe destacar que sin configurar correctamente los secrets de nuestro repositorio, le hubiera sido 
+imposible a GitHub acceder nuestra cuenta de DockerHub (al menos que especificaramos el token directamente
+en el archivo, lo cual claramente es una pésima práctica de seguridad).
+
+Para las pruebas, primero monté el docker localmente para asegurarme de que todo funcionara bien, despúes
+hice un merge al main, y finalmente un push local. Así pude revisar desde los Actions de mi repositorio
+que efectivamente corrió el Docker y se subió la imagen a mi cuenta: https://hub.docker.com/repositories/diugh
+
+Suerte con su semana compas, ¡ánimo!
