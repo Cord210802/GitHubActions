@@ -1,0 +1,8 @@
+    • El propósito del proyecto.
+      Aprender acerca del uso de github actions y la implementación de practicas de seguridad con secrets
+    • Cómo se ejecutan las pruebas localmente.
+      En el nuestra copia del rep desde github accedemos a las actions que podemos ejecutar para probar 
+    • La configuración del workflow de GitHub Actions.
+    • El link de tu docker hub con tu imagen creada con secrets
+      Con esa parte tuve problemas con la configuracion 
+    • Incluye cualquier información adicional que pueda ser útil para entender y ejecutar correctamente el proyecto.
