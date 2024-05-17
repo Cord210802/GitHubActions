@@ -1,0 +1,19 @@
+name: Print Git Log
+
+# Configura el cron job para ejecutarse a las 17:25 (hora de México) los lunes y miércoles
+on:
+  schedule:
+    - cron: '25 17 * * 1,3'
+
+jobs:
+  print-git-log:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Chequea el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Paso 2: Imprime el git log
+      - name: Print Git Log
+        run: git log
