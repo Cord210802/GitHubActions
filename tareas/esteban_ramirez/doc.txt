@@ -1,0 +1,22 @@
+Proyecto: Ejecución de Script Python en Docker
+
+Propósito:
+Este proyecto ejecuta un script Python en un contenedor Docker utilizando GitHub Actions.
+
+Configuración del Workflow:
+El flujo de trabajo se ejecuta automáticamente en cada push en `tareas/Esteban_Garcia`. Construye la imagen Docker y la sube a Docker Hub.
+
+Pruebas Localmente con GitHub Actions:
+1. Instala `act`.
+2. Asegúrate de tener Docker instalado.
+3. Crea un archivo `.env` con las variables de entorno.
+4. Ejecuta `act` para simular el workflow.
+
+Link de Docker Hub:
+https://hub.docker.com/repository/docker/elcachorrohumano/my-python-app/general
+
+Para más detalles, revisa el Dockerfile y el archivo de workflow.
+
+Contacto:
+Si tienes preguntas, contáctame.
+
